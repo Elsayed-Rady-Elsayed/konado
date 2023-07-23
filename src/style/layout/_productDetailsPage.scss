@@ -1,0 +1,155 @@
+.Productdetailspage {
+  .productHeader {
+    margin-top: -40px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: -600px;
+    background-color: white;
+    @media #{$mediumScreen} {
+      background-position: 0px;
+      height: 250px;
+    }
+    background-size: cover;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 0;
+      opacity: 0.14;
+    }
+    .headerText {
+      z-index: 22;
+      color: white;
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      transform: translate(-50%, -70%);
+      text-align: center;
+      .title {
+        font-size: 35px;
+        font-weight: bold;
+      }
+      p {
+        font-weight: normal;
+        margin-top: 20px;
+      }
+    }
+  }
+  .productBodyDetails {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+    @include flex();
+    gap: 30px;
+    .imgContainer {
+      position: relative;
+      flex-basis: 50%;
+      height: 350px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+    img {
+      height: 100%;
+      cursor: zoom-in;
+      padding: 20px;
+    }
+    .sale {
+      z-index: 111;
+      top: 15px !important;
+      left: 0px !important;
+      padding: 10px 14px !important;
+    }
+    .Text {
+      height: 340px;
+      @include flex(flex-start, flex-start, column, 14px);
+      .pHead {
+        font-size: 30px;
+        color: $textGrayColor;
+        font-weight: bold;
+      }
+      .pargrap {
+        width: 70%;
+        line-height: 1.7;
+        opacity: 0.9;
+      }
+      .priceSec {
+        @include flex();
+        .oldprice {
+          opacity: 0.5;
+          font-weight: lighter;
+          font-size: 14px;
+        }
+        .price {
+          font-size: 30px;
+          color: $mainColor;
+        }
+      }
+      .count {
+        margin-top: 10px;
+        span {
+          border: 1px solid #ddd;
+          padding: 15px 20px;
+          cursor: pointer;
+          transition: $trans;
+          &:hover {
+            background-color: $mainColor;
+            color: white;
+          }
+        }
+      }
+      .buttons {
+        button {
+          margin-right: 20px;
+          &:first-of-type:hover {
+            background-color: $mainColor;
+            color: white;
+          }
+          &:last-of-type:hover {
+            background-color: $redColor;
+            color: white;
+          }
+        }
+      }
+    }
+    @media #{$mediumScreen} {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 200px;
+      height: fit-content;
+      width: 100%;
+      overflow: hidden;
+      .imgContainer {
+        // width: 0px;
+        // flex-basis: 30% !important;
+        // height: fit-content !important;
+        // background-color: red;
+        // overflow: hidden;
+        // border: 1px solid #ddd;
+      }
+      .sale {
+        left: 0px !important;
+      }
+      .Text {
+        height: fit-content;
+        align-items: flex-start;
+        padding: 20px;
+        .pargrap {
+          width: 100%;
+        }
+        .buttons {
+          width: 100%;
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

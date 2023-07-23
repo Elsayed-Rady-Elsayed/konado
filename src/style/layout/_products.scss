@@ -1,0 +1,260 @@
+.productPage {
+  position: relative;
+  h3 {
+    font-size: 25px !important;
+  }
+  .GridLayout {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    ion-icon {
+      margin-right: 10px;
+    }
+  }
+  .line {
+    @include ruleLine();
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #Filter {
+    display: none;
+  }
+  @media #{$smallScreen} {
+    #Filter {
+      display: block;
+      position: absolute;
+      right: 10px;
+      background-color: black;
+      color: white;
+      padding: 7px 20px;
+      top: 0px;
+    }
+    .sideBar {
+      display: none;
+    }
+    .GridLayout {
+      right: 80px;
+      top: 5px;
+    }
+  }
+  .productBody {
+    display: flex;
+    // @media #{$smallScreen} {
+    //   width: 100%;
+    // }
+    .sideBar {
+      flex-basis: 20%;
+      @media #{$smallScreen} {
+        .productPage #Filter {
+          display: block;
+          position: absolute;
+          right: 0;
+        }
+        position: absolute;
+        z-index: 22;
+        height: 80vh;
+        flex-basis: 90%;
+        overflow-x: scroll;
+        padding: 10px;
+        margin-left: 20px;
+        background-color: white;
+        box-shadow: $normalBoxShadow;
+      }
+      .categorySideBar {
+        margin-bottom: 20px;
+        border: 1px dashed $mainColor;
+        padding: 20px;
+        p {
+          margin-bottom: 20px;
+          font-size: 23px;
+          font-weight: 500;
+          position: relative;
+          &::before {
+            content: "";
+            width: 50%;
+            height: 1px;
+            background-color: $mainColor;
+            position: absolute;
+            bottom: -5px;
+          }
+        }
+        ul {
+          @include flex(flex-start, flex-start, column, 16px);
+        }
+        li {
+          margin: 0;
+          color: #777;
+          &:hover {
+            color: $mainColor;
+            cursor: pointer;
+          }
+        }
+      }
+      .priceFilter {
+        border: 1px dashed $mainColor;
+        padding: 20px;
+        margin-bottom: 20px;
+        .priceFHead {
+          margin-bottom: 20px;
+          font-size: 23px;
+          font-weight: 500;
+          position: relative;
+          &::before {
+            content: "";
+            width: 70%;
+            height: 1px;
+            background-color: $mainColor;
+            position: absolute;
+            bottom: -5px;
+          }
+        }
+        p {
+          opacity: 0.6;
+          margin-top: 10px;
+        }
+        button {
+          background-color: black;
+          color: white;
+          padding: 10px 40px;
+        }
+      }
+      .ColorFilet {
+        border: 1px dashed $mainColor;
+        padding: 20px;
+        margin-bottom: 20px;
+        p {
+          margin-bottom: 20px;
+          font-size: 23px;
+          font-weight: 500;
+          position: relative;
+          &::before {
+            content: "";
+            width: 70%;
+            height: 1px;
+            background-color: $mainColor;
+            position: absolute;
+            bottom: -5px;
+          }
+        }
+        div {
+          margin-top: 10px;
+          input {
+          }
+          label {
+            color: #777;
+            margin-left: 5px;
+          }
+        }
+      }
+      .TopRated {
+        border: 1px dashed $mainColor;
+        padding: 20px;
+        .cardHead {
+          margin-bottom: 20px;
+          font-size: 23px;
+          font-weight: 500;
+          position: relative;
+          &::before {
+            content: "";
+            width: 51%;
+            height: 1px;
+            background-color: $mainColor;
+            position: absolute;
+            bottom: -5px;
+          }
+        }
+        img {
+          max-width: 100%;
+        }
+        .text {
+          text-align: center;
+          p {
+            color: $mainColor;
+          }
+          .price {
+            margin-top: 10px;
+            @include flex(center, center, row, 10px);
+            del {
+              opacity: 0.7;
+              font-size: 13px;
+            }
+            p {
+            }
+          }
+        }
+      }
+    }
+    .content {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      height: 100vh;
+      overflow-y: scroll;
+      padding: 10px;
+      flex-basis: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+      @media #{$smallScreen} {
+        min-width: 100%;
+        grid-template-columns: repeat(2, 0.5fr);
+      }
+      .card {
+        margin-top: 0;
+        max-height: 400px;
+        position: relative;
+        text-align: center;
+        .sale {
+          left: 0;
+        }
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .itemDetails {
+          display: none;
+        }
+        padding: 10px;
+        margin: 10px;
+        border-radius: 7px;
+        #favor {
+          cursor: pointer;
+          top: 7%;
+          right: 4%;
+          position: absolute;
+          background-color: #ddd;
+          color: black;
+          padding: 5px;
+          border-radius: 50%;
+          transition: $trans;
+          &:hover {
+            background-color: $mainColor;
+            color: $whiteColor;
+          }
+        }
+        .name {
+          font-family: serif;
+          font-size: 16px;
+          font-weight: 600;
+          margin: 10px 0;
+        }
+        .priceSec {
+          @include flex();
+          gap: 4px;
+        }
+        .oldprice {
+          font-weight: lighter;
+          color: $textGrayColor;
+          opacity: 0.3;
+        }
+        .price {
+          font-weight: bold;
+          color: $mainColor;
+        }
+        .stars {
+          margin-top: 10px;
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}

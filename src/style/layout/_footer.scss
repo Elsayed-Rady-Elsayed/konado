@@ -1,0 +1,29 @@
+.footer {
+  border-top: 1px solid $grayColor;
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  justify-content: center;
+  align-items: center;
+  .ruleLine {
+    @include ruleLine();
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  ul {
+    li {
+      margin: 0;
+      color: $textGrayColor;
+      cursor: pointer;
+      &:hover {
+        color: $mainColor;
+      }
+    }
+    padding: 0;
+    @include flex(flex-start, flex-start, column, 16px);
+  }
+  @media #{$mediumScreen} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

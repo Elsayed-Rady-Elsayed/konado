@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 80%;
+  margin: auto;
+  @media #{$smallScreen} {
+    width: 100%;
+  }
+}
+ul {
+  list-style-type: none;
+  li {
+    display: inline;
+    margin: 0 16px;
+  }
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+img {
+  max-width: 100%;
+}
+#scrollTop {
+  z-index: 111 !important;
+}
+// ::-webkit-scrollbar {
+//   display: none;
+// }
