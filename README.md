@@ -1,4 +1,4 @@
-##tools 
-#JQUERY
-#SCSS
-#REACT JS
+tools 
+JQUERY
+SCSS
+REACT JS
