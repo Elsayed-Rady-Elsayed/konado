@@ -1,0 +1,21 @@
+.contactus {
+  @include flex(center, center, column, 16px);
+
+  h4 {
+    font-size: 30px;
+  }
+  form {
+    width: 70%;
+    margin: auto;
+    @include flex(center, center, column, 16px);
+    div {
+      @include flex(center, flex-start, column, 5px);
+      label {
+        opacity: 0.5;
+      }
+      textarea {
+        height: 70px;
+      }
+    }
+  }
+}

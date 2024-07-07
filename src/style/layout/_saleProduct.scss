@@ -1,0 +1,23 @@
+.sales {
+  .cardContainer {
+    .card {
+      @include flex(flex-start, center, row, 0px);
+      img {
+        max-width: 100px !important;
+        @media #{$smallScreen} {
+          max-width: 50px !important;
+        }
+      }
+      .text {
+        @include flex(center, flex-start, column, 0px);
+
+        .priceSec {
+          padding: 0;
+          margin: 0;
+          gap: 0;
+        }
+        text-align: start !important;
+      }
+    }
+  }
+}

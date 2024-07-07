@@ -1,0 +1,93 @@
+.products,
+.trendProduct {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .header {
+    @include flex(space-between, center, row, 0);
+  }
+  .ruleLine {
+    @include ruleLine();
+    margin-top: 10px;
+  }
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    @media #{$smallScreen} {
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+      gap: 10px;
+    }
+    .card {
+      @include flex(center, center, column, 0px);
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      padding: 10px;
+      position: relative;
+      margin: 10px;
+      border-radius: 7px;
+      #favor {
+        cursor: pointer;
+        top: 7%;
+        right: 4%;
+        position: absolute;
+        background-color: #ddd;
+        color: black;
+        padding: 5px;
+        border-radius: 50%;
+        transition: $trans;
+        &:hover {
+          background-color: $mainColor;
+          color: $whiteColor;
+        }
+      }
+      .name {
+        font-family: serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+      .priceSec {
+        @include flex();
+        gap: 4px;
+      }
+      .oldprice {
+        font-weight: lighter;
+        color: $textGrayColor;
+        opacity: 0.3;
+      }
+      .price {
+        font-weight: bold;
+        color: $mainColor;
+      }
+      .img {
+        max-width: 100%;
+      }
+      .stars {
+        margin-top: 10px;
+        opacity: 0.3;
+      }
+    }
+  }
+  .two-images {
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(46%, 1fr));
+    gap: 2%;
+  }
+}
+.best.trendProduct {
+  .three-images {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 25% 46% 25%;
+    gap: 2%;
+    img {
+      height: 100%;
+    }
+    @media #{$smallScreen} {
+      padding: 16px;
+    }
+  }
+}

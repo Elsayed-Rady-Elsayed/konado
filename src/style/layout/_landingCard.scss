@@ -1,0 +1,22 @@
+.landingCard {
+  margin-top: 10px;
+  display: grid;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(calc(90% / 3), 1fr));
+  @media #{$smallScreen} {
+    grid-template-columns: repeat(auto-fill, minmax(calc(94% / 2), 1fr));
+  }
+  gap: 2%;
+  img {
+    max-width: 100% !important;
+    height: 100% !important;
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+  @media #{$smallScreen} {
+    margin: 0 0 10px 0;
+    padding: 10px;
+  }
+}

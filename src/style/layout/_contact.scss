@@ -1,0 +1,64 @@
+.contact {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  @media #{$smallScreen} {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)) !important;
+    overflow: hidden;
+    max-width: 100% !important;
+    gap: 20px;
+    padding: 10px;
+    .left {
+    }
+    form {
+      input[type="email"] {
+        width: 200px !important;
+      }
+    }
+  }
+  .left {
+    h2 {
+      font-size: 22px;
+      font-family: serif;
+      color: $textGrayColor;
+    }
+    p {
+      color: $mainColor;
+      margin-top: 10px;
+      font-family: serif;
+      font-size: 14px;
+    }
+  }
+  form {
+    @include flex(center, center, row, 0px);
+    input[type="email"] {
+      width: 70%;
+      height: 40px;
+      padding: 3px;
+      outline: none;
+      border: 1px solid #ddd;
+    }
+    input[type="submit"] {
+      border: none;
+      outline: none;
+      font-weight: bold;
+      padding: 12.8px 17px;
+      background-color: $mainColor;
+      color: $whiteColor;
+      border-radius: 0 10px 10px 0;
+    }
+  }
+  .icons {
+    @include flex();
+    ion-icon {
+      border: 1px solid gray;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 20px;
+      &:hover {
+        color: $mainColor;
+      }
+    }
+  }
+}

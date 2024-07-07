@@ -1,0 +1,12 @@
+.login,
+.register {
+  text-align: center;
+  form {
+    width: fit-content;
+    margin: auto;
+    div {
+      margin: 10px 0 20px 0;
+      @include flex(flex-start, flex-start, column, 16px);
+    }
+  }
+}
