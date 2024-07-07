@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/konado/static/css/main.b1486954.css",
+    "main.js": "/konado/static/js/main.6c826d3f.js",
+    "static/js/453.e82f18a5.chunk.js": "/konado/static/js/453.e82f18a5.chunk.js",
+    "index.html": "/konado/index.html",
+    "main.b1486954.css.map": "/konado/static/css/main.b1486954.css.map",
+    "main.6c826d3f.js.map": "/konado/static/js/main.6c826d3f.js.map",
+    "453.e82f18a5.chunk.js.map": "/konado/static/js/453.e82f18a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1486954.css",
+    "static/js/main.6c826d3f.js"
+  ]
+}
